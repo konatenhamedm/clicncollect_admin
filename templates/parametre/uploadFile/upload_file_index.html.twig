@@ -1,0 +1,26 @@
+{% extends 'base-layout.html.twig' %}
+
+{% block title %}Upload files{% endblock %}
+
+{% block body %}
+    <div class="card shadow-sm">
+        <div class="card-header card-header-sm">
+            <h3 class="card-title">Ajout des données en base via un fichier</h3>
+            <div class="card-toolbar">
+                <a href="{{ path('addFile_new') }}" class="btn btn-main btn-sm"
+                   data-bs-toggle="modal" data-bs-target="#exampleModalSizeLg2">
+                    <i class="bi bi-plus-square text-light"></i>
+                    Nouveau
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
