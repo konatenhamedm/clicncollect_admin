@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Marque;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,6 +14,10 @@ class MarqueType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('active', CheckboxType::class, [
+                'label' => "Active",
+                'required' => false,
+            ])
             ->add('libelle')
             ->add('ordre')
             ->add('lien', UrlType::class, [])

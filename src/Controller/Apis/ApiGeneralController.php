@@ -17,7 +17,7 @@ class ApiGeneralController extends ApiInterface
     public function getMarque(MarqueRepository $marqueRepository)
     {
         try {
-            $marques = $marqueRepository->findBy([], ['ordre' => 'ASC']);
+            $marques = $marqueRepository->findBy(['active' => true], ['ordre' => 'ASC']);
 
             $response = $this->responseNew($marques, 'groupe_marque');
         } catch (\Throwable $th) {
@@ -31,7 +31,7 @@ class ApiGeneralController extends ApiInterface
     public function getBaniere(BaniereRepository $marqueRepository)
     {
         try {
-            $marques = $marqueRepository->findBy([], ['id' => 'ASC']);
+            $marques = $marqueRepository->findBy(['active' => true], ['id' => 'ASC']);
 
             $response = $this->responseNew($marques, 'groupe_marque');
         } catch (\Throwable $th) {

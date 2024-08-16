@@ -39,12 +39,28 @@ class Marque
     #[Group(["groupe_marque"])]
     private ?string $lien = null;
 
+    #[ORM\Column]
+    #[Group(["groupe_marque"])]
+    private ?bool $active = null;
+
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    public function isActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): static
+    {
+        $this->active = $active;
+
+        return $this;
+    }
     public function getLibelle(): ?string
     {
         return $this->libelle;
